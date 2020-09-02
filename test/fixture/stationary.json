@@ -1,0 +1,17 @@
+[
+    {
+        "_id": "5db6f1854cc1751452c5ae93",
+        "name": "Classic White",
+        "preview_url": "http://res.cloudinary.com/handwrite/image/upload/v1572270464/cards/yflijfai9wm38czthluk.jpg"
+    },
+    {
+        "_id": "5db6f19b4cc1751452c5ae95",
+        "name": "Classic Navy",
+        "preview_url": "http://res.cloudinary.com/handwrite/image/upload/v1572270484/cards/afwlmwfs4dkh5s6xt5uc.jpg"
+    },
+    {
+        "_id": "5db6f1b74cc1751452c5ae96",
+        "name": "Hello",
+        "preview_url": "http://res.cloudinary.com/handwrite/image/upload/v1572270512/cards/mb9fhgwgnkdxiqtr9k0i.jpg"
+    }
+]

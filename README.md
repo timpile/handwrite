@@ -15,6 +15,16 @@ def deps do
 end
 ```
 
+## Configuration
+
+To make API calls, it is necessary to configure your Handwrite API key.
+
+```elixir
+use Mix.Config
+
+config :handwrite, api_key: System.get_env("HANDWRITE_API_KEY")
+```
+
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/handwrite](https://hexdocs.pm/handwrite).

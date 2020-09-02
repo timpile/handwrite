@@ -1,0 +1,28 @@
+[
+    {
+        "_id": "5dba45e8f2b173cb5dff0300",
+        "message": "Hey dude,\nIt was great meeting you last week at the party. We'd love to have you back at the next one!\n\nBest,\n-Jackie",
+        "to": {
+            "firstName": "The",
+            "lastName": "Dude",
+            "company": "Unemployed",
+            "street1": "25 Main Street",
+            "city": "Los Angeles",
+            "state": "CA",
+            "zip": "90210"
+        },
+        "from": {
+            "firstName": "Jackie",
+            "lastName": "Treehorn",
+            "street1": "1 Random Street",
+            "street2": "Apt 33A",
+            "city": "Malibu",
+            "state": "CA",
+            "zip": "90263"
+        },
+        "status": "processing",
+        "handwriting": "5db6f0724cc1751452c5ae8e",
+        "card": "5db6f0724cc1751452c5ae8e",
+        "createdAt": "2019-10-31T02:24:40.648Z"
+    }
+]

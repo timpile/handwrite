@@ -1,18 +1,5 @@
 defmodule Handwrite do
   @moduledoc """
-  Documentation for Handwrite.
+  An Elixir wrapper for the [Handwrite](https://handwrite.io/) API.
   """
-
-  @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Handwrite.hello()
-      :world
-
-  """
-  def hello do
-    :world
-  end
 end

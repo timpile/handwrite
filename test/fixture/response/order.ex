@@ -8,8 +8,8 @@ defmodule Fixture.Response.Order do
        "environment" => "test",
        "from" => %{
          "city" => "Detroit",
-         "firstName" => "Tim Pile",
-         "lastName" => "",
+         "firstName" => "Tim",
+         "lastName" => "P.",
          "state" => "MI",
          "street1" => "123 6 Mile",
          "zip" => "12345"
@@ -60,7 +60,7 @@ defmodule Fixture.Response.Order do
          "from" => %{
            "city" => "Detroit",
            "firstName" => "Tim",
-           "lastName" => "Pile",
+           "lastName" => "P",
            "state" => "MI",
            "street1" => "123 6 Mile",
            "street2" => "",

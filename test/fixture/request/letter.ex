@@ -16,7 +16,7 @@ defmodule Fixture.Request.Letter do
       ],
       from: %Handwrite.From{
         first_name: "Tim",
-        last_name: "Pile",
+        last_name: "P",
         street1: "123 6 Mile",
         street2: "",
         city: "Detroit",

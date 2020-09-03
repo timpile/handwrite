@@ -7,7 +7,14 @@ defmodule Handwrite.MixProject do
       version: "0.1.0",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      name: "Handwrite",
+      source_url: "https://github.com/timpile/handwrite",
+      homepage_url: "https://github.com/timpile/handwrite",
+      docs: [
+        main: "Handwrite",
+        extras: ["README.md"]
+      ]
     ]
   end
 
@@ -20,7 +27,8 @@ defmodule Handwrite.MixProject do
   defp deps do
     [
       {:httpoison, "~> 1.6"},
-      {:poison, "~> 4.0"}
+      {:poison, "~> 4.0"},
+      {:ex_doc, "~> 0.22", only: :dev, runtime: false}
     ]
   end
 end

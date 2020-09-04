@@ -23,8 +23,11 @@ end
 
 To make API calls, it is necessary to configure your Handwrite API key.
 
-```elixir
-use Mix.Config
+Add the `HANDWRITE_API_KEY` environment variable to your `.env` file.
 
-config :handwrite, api_key: System.get_env("HANDWRITE_API_KEY")
+It should look like this (or see the `.env_example`).
 ```
+HANDWRITE_API_KEY=test_HW_asdfasdfasdf
+```
+
+Then make sure the environment variables are loaded and accessible via `System.get_env("HANDWRITE_API_KEY")` when your application starts.

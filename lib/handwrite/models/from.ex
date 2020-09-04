@@ -1,4 +1,8 @@
-defmodule Handwrite.From do
+defmodule Handwrite.Model.From do
+  @moduledoc """
+  Represents the name and address of the person sending the card.
+  """
+
   @enforce_keys [:first_name, :last_name, :street1, :city, :state, :zip]
 
   defstruct first_name: nil,

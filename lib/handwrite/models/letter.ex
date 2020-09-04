@@ -1,4 +1,8 @@
-defmodule Handwrite.Letter do
+defmodule Handwrite.Model.Letter do
+  @moduledoc """
+  Represents the details of a letter.
+  """
+
   @enforce_keys [:message, :handwriting, :card]
 
   defstruct message: nil,
@@ -11,7 +15,7 @@ defmodule Handwrite.Letter do
           message: String.t(),
           handwriting: String.t(),
           card: String.t(),
-          recipients: list(%Handwrite.Recipient{}),
-          from: %Handwrite.From{}
+          recipients: list(%Handwrite.Model.Recipient{}),
+          from: %Handwrite.Model.From{}
         }
 end

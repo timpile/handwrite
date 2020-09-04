@@ -37,6 +37,7 @@ defmodule Handwrite.MixProject do
 
   defp package() do
     [
+      files: ~w(lib .formatter.exs mix.exs README* LICENSE* CHANGELOG* .env_example),
       licenses: ["MIT"],
       links: %{"GitHub" => "https://github.com/timpile/handwrite"}
     ]
@@ -44,7 +45,7 @@ defmodule Handwrite.MixProject do
 
   defp docs() do
     [
-      main: "Handwrite",
+      main: "readme",
       extras: ["README.md"]
     ]
   end

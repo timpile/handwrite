@@ -1,11 +1,11 @@
 defmodule Fixture.Request.Letter do
   def build do
-    %Handwrite.Letter{
+    %Handwrite.Model.Letter{
       message: "Hi John,\r\n\r\nThanks for everything!\r\n\r\nYour buddy,\r\nTim",
       handwriting: "5dc306b0bc08d20016f1ec34",
       card: "5ee796dedb3dce23d4c19edf",
       recipients: [
-        %Handwrite.Recipient{
+        %Handwrite.Model.Recipient{
           first_name: "John",
           last_name: "M.",
           street1: "543 Market St",
@@ -14,7 +14,7 @@ defmodule Fixture.Request.Letter do
           zip: "54321"
         }
       ],
-      from: %Handwrite.From{
+      from: %Handwrite.Model.From{
         first_name: "Tim",
         last_name: "P",
         street1: "123 6 Mile",

@@ -29,11 +29,13 @@ defmodule Handwrite.Endpoint.Stationery do
   import Handwrite.Client
   import Handwrite.Response
 
-  def url, do: "#{base_url()}/stationery"
-
+  @spec get :: {:error, any} | {:ok, any}
   def get do
     url()
     |> HTTPoison.get(headers())
     |> handle_response()
   end
+
+  @spec url :: String.t()
+  def url, do: "#{base_url()}/stationery"
 end

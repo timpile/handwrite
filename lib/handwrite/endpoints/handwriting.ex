@@ -30,11 +30,13 @@ defmodule Handwrite.Endpoint.Handwriting do
   import Handwrite.Client
   import Handwrite.Response
 
-  def url, do: "#{base_url()}/handwriting"
-
+  @spec get :: {:error, any} | {:ok, any}
   def get do
     url()
     |> HTTPoison.get(headers())
     |> handle_response()
   end
+
+  @spec url :: String.t()
+  def url, do: "#{base_url()}/handwriting"
 end

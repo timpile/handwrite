@@ -3,17 +3,9 @@ defmodule Handwrite.Response do
   Handles interpreting responses from the Handwrite API.
   """
 
-  @spec handle_response({:ok, HTTPoison.Response.t()}) :: {:error, any} | {:ok, any}
+  @spec handle_response({:ok, HTTPoison.Response.t()}) :: {:ok, any}
   def handle_response({:ok, %HTTPoison.Response{body: body}} = _response) do
-    response_body = body |> parse_json()
-
-    case response_body do
-      %{"message" => message} ->
-        {:error, message}
-
-      _ ->
-        {:ok, response_body}
-    end
+    {:ok, body |> parse_json()}
   end
 
   @spec handle_response({:error, HTTPoison.Error.t()}) :: {:error, any}

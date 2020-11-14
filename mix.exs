@@ -29,8 +29,6 @@ defmodule Handwrite.MixProject do
 
   defp deps do
     [
-      {:httpoison, "~> 1.6"},
-      {:poison, "~> 4.0"},
       {:tesla, "~> 1.3.0"},
       {:jason, "~> 1.2"},
       {:ex_doc, "~> 0.22", only: :dev, runtime: false}

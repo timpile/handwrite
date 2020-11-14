@@ -25,8 +25,8 @@ defmodule Handwrite do
   ## Usage
 
   ```
-  iex> handwrite_config = Application.get_env(:my_app, :handwrite)
-  iex> client = Handwrite.client(handwrite_config)
+  handwrite_config = Application.get_env(:my_app, :handwrite)
+  client = Handwrite.client(handwrite_config)
   ```
   """
 
@@ -58,7 +58,7 @@ defmodule Handwrite do
   ## Example
 
   ```
-  iex> Handwrite.list_handwritings(client)
+  Handwrite.list_handwritings(client)
   ```
 
   Returns one of the following:
@@ -81,7 +81,7 @@ defmodule Handwrite do
   ## Example
 
   ```
-  iex> Handwrite.list_stationeries(client)
+  Handwrite.list_stationeries(client)
   ```
 
   Returns one of the following:
@@ -103,8 +103,7 @@ defmodule Handwrite do
 
   ## Example
   ```
-  iex> order_id = "5f6b5c09c77c9a00171c5304"
-  iex> Handwrite.get_order(client, order_id)
+  Handwrite.get_order(client, "5f6b5c09c77c9a00171c5304")
   ```
 
   Returns one of the following:
@@ -126,7 +125,7 @@ defmodule Handwrite do
 
   ## Example
   ```
-  iex> letter = %Handwrite.Model.Letter{
+  letter = %Handwrite.Model.Letter{
     card: "5dc304cfbc08d20016f1ec2f",
     from: %Handwrite.Model.Sender{
       city: "Detroit",
@@ -150,7 +149,7 @@ defmodule Handwrite do
       }
     ]
   }
-  iex> Handwrite.send_letter(client, letter)
+  Handwrite.send_letter(client, letter)
   ```
 
   Returns one of the following:

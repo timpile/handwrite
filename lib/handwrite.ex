@@ -103,7 +103,8 @@ defmodule Handwrite do
 
   ## Example
   ```
-  Handwrite.get_order(client, "5f6b5c09c77c9a00171c5304")
+  order_id =  "5f6b5c09c77c9a00171c5304"
+  Handwrite.get_order(client, order_id)
   ```
 
   Returns one of the following:

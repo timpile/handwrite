@@ -53,35 +53,35 @@ Handwrite.list_handwritings(client)
 
 ```elixir
 order_id = "5f6b5c09c77c9a00171c5304"
-Handwrite.get_order(client, "5f6b5c09c77c9a00171c5304")
+Handwrite.get_order(client, order_id)
 ```
 
 ### Send a Letter
 
 ```elixir
-  letter = %Handwrite.Model.Letter{
-    card: "5dc304cfbc08d20016f1ec2f",
-    from: %Handwrite.Model.Sender{
-      city: "Detroit",
+letter = %Handwrite.Model.Letter{
+  card: "5dc304cfbc08d20016f1ec2f",
+  from: %Handwrite.Model.Sender{
+    city: "Detroit",
+    first_name: "First",
+    last_name: "Last",
+    state: "MI",
+    street1: "123 6 Mile",
+    street2: nil,
+    zip: "12345"
+  },
+  handwriting: "5dc306b0bc08d20016f1ec34",
+  message: "Hey! Thanks for being awesome.",
+  recipients: [
+    %Handwrite.Model.Recipient{
+      city: "San Francisco",
       first_name: "First",
       last_name: "Last",
-      state: "MI",
-      street1: "123 6 Mile",
-      street2: nil,
-      zip: "12345"
-    },
-    handwriting: "5dc306b0bc08d20016f1ec34",
-    message: "Hey! Thanks for being awesome.",
-    recipients: [
-      %Handwrite.Model.Recipient{
-        city: "San Francisco",
-        first_name: "First",
-        last_name: "Last",
-        state: "CA",
-        street1: "543 Market St",
-        zip: "54321"
-      }
-    ]
+      state: "CA",
+      street1: "543 Market St",
+      zip: "54321"
+    }
+  ]
 }
 Handwrite.send_letter(client, letter)
 ```

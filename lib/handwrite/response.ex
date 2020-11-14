@@ -1,27 +1,41 @@
 defmodule Handwrite.Response do
   @moduledoc """
-  Handles interpreting responses from the Handwrite API.
+  Handles parsing responses from the Handwrite API.
   """
 
-  @spec handle_response({:ok, HTTPoison.Response.t()}) :: {:error, any} | {:ok, any}
-  def handle_response({:ok, %HTTPoison.Response{body: body}} = _response) do
-    response_body = body |> parse_json()
+  @enforce_keys [:status, :body]
 
-    case response_body do
-      %{"message" => message} ->
-        {:error, message}
+  defstruct status: nil,
+            body: nil
 
-      _ ->
-        {:ok, response_body}
+  @type t() :: %__MODULE__{
+          status: integer(),
+          body: any
+        }
+
+  @spec parse({:error, any} | {:ok, Tesla.Env.t()}) ::
+          {:error, Handwrite.Response.t()} | {:ok, Handwrite.Response.t()}
+  def parse(response) do
+    case response do
+      {:ok, %Tesla.Env{} = env} ->
+        case env.status do
+          200 ->
+            {:ok, %Handwrite.Response{status: env.status, body: parse_body(env.body)}}
+
+          _ ->
+            {:error, %Handwrite.Response{status: env.status, body: parse_body(env.body)}}
+        end
+
+      {:error, message} ->
+        {:error, %Handwrite.Response{status: nil, body: message}}
     end
   end
 
-  @spec handle_response({:error, HTTPoison.Error.t()}) :: {:error, any}
-  def handle_response({:error, %HTTPoison.Error{reason: reason}}) do
-    {:error, reason}
-  end
+  defp parse_body([h | list]), do: [keys_to_atoms(h) | parse_body(list)]
+  defp parse_body([]), do: []
+  defp parse_body(%{} = body), do: keys_to_atoms(body)
 
-  defp parse_json(json_str) do
-    Poison.Parser.parse!(json_str, %{})
+  defp keys_to_atoms(body) do
+    body |> Map.new(fn {k, v} -> {String.to_atom(k), v} end)
   end
 end

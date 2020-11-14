@@ -4,7 +4,7 @@ defmodule Handwrite.MixProject do
   def project do
     [
       app: :handwrite,
-      version: "0.1.0",
+      version: "1.0.0",
       elixir: "~> 1.9",
       start_permanent: Mix.env() == :prod,
       description: description(),
@@ -13,9 +13,13 @@ defmodule Handwrite.MixProject do
       name: "Handwrite",
       source_url: "https://github.com/timpile/handwrite",
       homepage_url: "https://github.com/timpile/handwrite",
-      docs: docs()
+      docs: docs(),
+      elixirc_paths: elixirc_paths(Mix.env())
     ]
   end
+
+  defp elixirc_paths(:test), do: ["lib", "test/helpers"]
+  defp elixirc_paths(_), do: ["lib"]
 
   def application do
     [
@@ -25,14 +29,14 @@ defmodule Handwrite.MixProject do
 
   defp deps do
     [
-      {:httpoison, "~> 1.6"},
-      {:poison, "~> 4.0"},
+      {:tesla, "~> 1.3.0"},
+      {:jason, "~> 1.2"},
       {:ex_doc, "~> 0.22", only: :dev, runtime: false}
     ]
   end
 
   defp description() do
-    "An unofficial Elixir library for working with the Handwrite.io API."
+    "An Elixir library for working with the Handwrite.io API."
   end
 
   defp package() do

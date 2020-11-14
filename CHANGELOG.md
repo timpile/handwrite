@@ -1,5 +1,12 @@
-# Changelog
+# Change Log
+All notable changes to this project will be documented in this file.
 
-## v0.0.1
+## [1.0.0]
+### Changed
+* Replaced `httpoison` with `tesla` for HTTP requests.
+* Use mix config for secrets.
+* Improve test coverage and docs.
 
-* basic functionality
+## [0.1.0]
+### Added
+* Basic functionality.

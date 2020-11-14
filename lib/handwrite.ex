@@ -9,7 +9,7 @@ defmodule Handwrite do
   ```elixir
   def deps do
     [
-      {:handwrite, "~> 0.2.0"}
+      {:handwrite, "~> 1.0.0"}
     ]
   end
   ```

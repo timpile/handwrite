@@ -1,6 +1,8 @@
 defmodule Handwrite.MixProject do
   use Mix.Project
 
+  @source_url "https://github.com/timpile/handwrite"
+
   def project do
     [
       app: :handwrite,
@@ -11,8 +13,7 @@ defmodule Handwrite.MixProject do
       package: package(),
       deps: deps(),
       name: "Handwrite",
-      source_url: "https://github.com/timpile/handwrite",
-      homepage_url: "https://github.com/timpile/handwrite",
+      homepage_url: @source_url,
       docs: docs(),
       elixirc_paths: elixirc_paths(Mix.env())
     ]
@@ -31,7 +32,7 @@ defmodule Handwrite.MixProject do
     [
       {:tesla, "~> 1.3.0"},
       {:jason, "~> 1.2"},
-      {:ex_doc, "~> 0.22", only: :dev, runtime: false}
+      {:ex_doc, ">= 0.0.0", only: :dev, runtime: false}
     ]
   end
 
@@ -43,14 +44,18 @@ defmodule Handwrite.MixProject do
     [
       files: ~w(lib .formatter.exs mix.exs README* LICENSE* CHANGELOG* .env_example),
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/timpile/handwrite"}
+      links: %{
+        "Changelog" => "#{@source_url}/blob/master/CHANGELOG.md",
+        "GitHub" => @source_url
+      }
     ]
   end
 
   defp docs() do
     [
       main: "readme",
-      extras: ["README.md"]
+      source_url: @source_url,
+      extras: ["README.md", "CHANGELOG.md"]
     ]
   end
 end

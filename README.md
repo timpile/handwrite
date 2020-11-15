@@ -1,16 +1,16 @@
 # Handwrite
 
-An Elixir library for working with [Handwrite.io](https://documentation.handwrite.io/)
+[![Module Version](https://img.shields.io/hexpm/v/handwrite.svg)](https://hex.pm/packages/handwrite)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/handwrite/)
+[![Total Download](https://img.shields.io/hexpm/dt/handwrite.svg)](https://hex.pm/packages/handwrite)
+[![License](https://img.shields.io/hexpm/l/handwrite.svg)](https://github.com/timpile/handwrite/blob/master/LICENSE)
+[![Last Updated](https://img.shields.io/github/last-commit/timpile/handwrite.svg)](https://github.com/timpile/handwrite/commits/master)
 
-## Documentation
-
-Hex package details can be found at [https://hex.pm/packages/handwrite](https://hex.pm/packages/handwrite).
-
-Detailed documentation can be found at [https://hexdocs.pm/handwrite](https://hexdocs.pm/handwrite).
+An Elixir library for working with [Handwrite.io](https://documentation.handwrite.io/), a service to send handwritten cards at scale.
 
 ## Installation
 
-The package can be installed by adding `handwrite` to your list of dependencies in `mix.exs`:
+Add `:handwrite` to your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
@@ -26,6 +26,12 @@ To make API calls, it is necessary to configure your Handwrite API key. Add the 
 
 ```elixir
 config :my_app, :handwrite, api_key: "test_HW_asdfasdfasdf"
+```
+
+Or using environmental variable.
+
+```bash
+export HANDWRITE_API_KEY=test_HW_asdfasdfasdf
 ```
 
 ## Usage
@@ -85,3 +91,7 @@ letter = %Handwrite.Model.Letter{
 }
 Handwrite.send_letter(client, letter)
 ```
+
+## License
+
+The source code is licensed under the MIT license. Copyright (c) 2020- Tim Pile.
